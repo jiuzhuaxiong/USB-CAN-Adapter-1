@@ -13977,7 +13977,6 @@ drill 1.3 mm</description>
 <part name="C2" library="rcl" deviceset="C-EU" device="C0805" value="10µ 10V"/>
 <part name="IC1" library="STM32F303" deviceset="STM32F303_F334_LQFP48" device=""/>
 <part name="IC2" library="texas" deviceset="ISO1050" device="DUB"/>
-<part name="C3" library="rcl" deviceset="C-EU" device="C0805" value="100n"/>
 <part name="C4" library="rcl" deviceset="C-EU" device="C0805" value="100n"/>
 <part name="GND2" library="supply1" deviceset="GND" device=""/>
 <part name="P+2" library="supply1" deviceset="VCC" device=""/>
@@ -14099,7 +14098,6 @@ drill 1.3 mm</description>
 <instance part="C2" gate="G$1" x="429.26" y="76.2"/>
 <instance part="IC1" gate="G$1" x="114.3" y="96.52"/>
 <instance part="IC2" gate="G$1" x="363.22" y="137.16" rot="R180"/>
-<instance part="C3" gate="G$1" x="444.5" y="76.2"/>
 <instance part="C4" gate="G$1" x="322.58" y="139.7"/>
 <instance part="GND2" gate="1" x="378.46" y="144.78" rot="R180"/>
 <instance part="P+2" gate="VCC" x="388.62" y="129.54" rot="R270"/>
@@ -14461,11 +14459,6 @@ drill 1.3 mm</description>
 <junction x="101.6" y="157.48"/>
 </segment>
 <segment>
-<pinref part="IC1" gate="G$1" pin="VBAT"/>
-<wire x1="127" y1="144.78" x2="127" y2="160.02" width="0.1524" layer="91"/>
-<pinref part="P+6" gate="VCC" pin="VCC"/>
-</segment>
-<segment>
 <pinref part="R10" gate="G$1" pin="2"/>
 <wire x1="472.44" y1="-78.74" x2="472.44" y2="-76.2" width="0.1524" layer="91"/>
 <pinref part="P+7" gate="VCC" pin="VCC"/>
@@ -14521,6 +14514,11 @@ drill 1.3 mm</description>
 <wire x1="190.5" y1="-106.68" x2="190.5" y2="-104.14" width="0.1524" layer="91"/>
 <pinref part="P+13" gate="VCC" pin="VCC"/>
 </segment>
+<segment>
+<pinref part="P+6" gate="VCC" pin="VCC"/>
+<pinref part="IC1" gate="G$1" pin="VBAT"/>
+<wire x1="127" y1="160.02" x2="127" y2="144.78" width="0.1524" layer="91"/>
+</segment>
 </net>
 <net name="CAN_L" class="0">
 <segment>
@@ -14556,20 +14554,6 @@ drill 1.3 mm</description>
 <pinref part="J1" gate="G$1" pin="3"/>
 <wire x1="363.22" y1="-129.54" x2="355.6" y2="-129.54" width="0.1524" layer="91"/>
 <label x="363.22" y="-129.54" size="1.4224" layer="95" xref="yes"/>
-</segment>
-</net>
-<net name="CAN_VCC" class="0">
-<segment>
-<pinref part="R2" gate="G$1" pin="2"/>
-<wire x1="457.2" y1="-78.74" x2="457.2" y2="-76.2" width="0.1524" layer="91"/>
-<label x="457.2" y="-76.2" size="1.4224" layer="95" rot="R90" xref="yes"/>
-</segment>
-</net>
-<net name="CAN_GND" class="0">
-<segment>
-<pinref part="LED1" gate="G$1" pin="C"/>
-<wire x1="457.2" y1="-99.06" x2="457.2" y2="-101.6" width="0.1524" layer="91"/>
-<label x="457.2" y="-101.6" size="1.4224" layer="95" rot="R270" xref="yes"/>
 </segment>
 </net>
 <net name="VDDA" class="0">
@@ -14635,9 +14619,9 @@ drill 1.3 mm</description>
 <label x="487.68" y="-101.6" size="1.4224" layer="95" rot="R270" xref="yes"/>
 </segment>
 <segment>
-<pinref part="IC1" gate="G$1" pin="PB13"/>
-<wire x1="162.56" y1="104.14" x2="182.88" y2="104.14" width="0.1524" layer="91"/>
-<label x="182.88" y="104.14" size="1.4224" layer="95" xref="yes"/>
+<pinref part="IC1" gate="G$1" pin="PA4"/>
+<wire x1="66.04" y1="68.58" x2="55.88" y2="68.58" width="0.1524" layer="91"/>
+<label x="55.88" y="68.58" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="LED_BLUE" class="0">
@@ -14647,9 +14631,9 @@ drill 1.3 mm</description>
 <label x="502.92" y="-101.6" size="1.4224" layer="95" rot="R270" xref="yes"/>
 </segment>
 <segment>
-<pinref part="IC1" gate="G$1" pin="PB12"/>
-<wire x1="162.56" y1="99.06" x2="182.88" y2="99.06" width="0.1524" layer="91"/>
-<label x="182.88" y="99.06" size="1.4224" layer="95" xref="yes"/>
+<pinref part="IC1" gate="G$1" pin="PA3"/>
+<wire x1="66.04" y1="73.66" x2="55.88" y2="73.66" width="0.1524" layer="91"/>
+<label x="55.88" y="73.66" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="N$7" class="0">
@@ -14802,16 +14786,6 @@ drill 1.3 mm</description>
 </net>
 <net name="VCC_USB" class="0">
 <segment>
-<pinref part="J9" gate="G$1" pin="VBUS"/>
-<wire x1="30.48" y1="-147.32" x2="40.64" y2="-147.32" width="0.1524" layer="91"/>
-<pinref part="C18" gate="G$1" pin="2"/>
-<wire x1="40.64" y1="-147.32" x2="40.64" y2="-142.24" width="0.1524" layer="91"/>
-<wire x1="40.64" y1="-147.32" x2="50.8" y2="-147.32" width="0.1524" layer="91"/>
-<junction x="40.64" y="-147.32"/>
-<wire x1="50.8" y1="-147.32" x2="50.8" y2="-114.3" width="0.1524" layer="91"/>
-<pinref part="L2" gate="G$1" pin="1"/>
-</segment>
-<segment>
 <pinref part="IC3" gate="1" pin="VCC"/>
 <wire x1="116.84" y1="-116.84" x2="111.76" y2="-116.84" width="0.1524" layer="91"/>
 <wire x1="111.76" y1="-116.84" x2="111.76" y2="-91.44" width="0.1524" layer="91"/>
@@ -14857,10 +14831,8 @@ drill 1.3 mm</description>
 <segment>
 <pinref part="DC1" gate="G$1" pin="+VOUT"/>
 <wire x1="411.48" y1="81.28" x2="429.26" y2="81.28" width="0.1524" layer="91"/>
-<pinref part="C3" gate="G$1" pin="1"/>
 <wire x1="429.26" y1="81.28" x2="444.5" y2="81.28" width="0.1524" layer="91"/>
 <wire x1="444.5" y1="81.28" x2="454.66" y2="81.28" width="0.1524" layer="91"/>
-<wire x1="444.5" y1="78.74" x2="444.5" y2="81.28" width="0.1524" layer="91"/>
 <pinref part="C2" gate="G$1" pin="1"/>
 <wire x1="429.26" y1="78.74" x2="429.26" y2="81.28" width="0.1524" layer="91"/>
 <label x="454.66" y="81.28" size="1.4224" layer="95" xref="yes"/>
@@ -14880,6 +14852,11 @@ drill 1.3 mm</description>
 <wire x1="322.58" y1="129.54" x2="312.42" y2="129.54" width="0.1524" layer="91"/>
 <label x="312.42" y="129.54" size="1.4224" layer="95" rot="R180" xref="yes"/>
 <junction x="322.58" y="129.54"/>
+</segment>
+<segment>
+<pinref part="R2" gate="G$1" pin="2"/>
+<wire x1="457.2" y1="-78.74" x2="457.2" y2="-76.2" width="0.1524" layer="91"/>
+<label x="457.2" y="-76.2" size="1.4224" layer="95" rot="R90" xref="yes"/>
 </segment>
 </net>
 <net name="N$18" class="0">
@@ -15030,9 +15007,7 @@ drill 1.3 mm</description>
 <wire x1="419.1" y1="68.58" x2="429.26" y2="68.58" width="0.1524" layer="91"/>
 <pinref part="C2" gate="G$1" pin="2"/>
 <wire x1="429.26" y1="68.58" x2="429.26" y2="71.12" width="0.1524" layer="91"/>
-<pinref part="C3" gate="G$1" pin="2"/>
 <wire x1="429.26" y1="68.58" x2="444.5" y2="68.58" width="0.1524" layer="91"/>
-<wire x1="444.5" y1="68.58" x2="444.5" y2="71.12" width="0.1524" layer="91"/>
 <wire x1="444.5" y1="68.58" x2="454.66" y2="68.58" width="0.1524" layer="91"/>
 <junction x="429.26" y="68.58"/>
 <junction x="444.5" y="68.58"/>
@@ -15044,6 +15019,23 @@ drill 1.3 mm</description>
 <pinref part="J1" gate="G$1" pin="1"/>
 <wire x1="355.6" y1="-134.62" x2="363.22" y2="-134.62" width="0.1524" layer="91"/>
 <label x="363.22" y="-134.62" size="1.4224" layer="95" xref="yes"/>
+</segment>
+<segment>
+<pinref part="LED1" gate="G$1" pin="C"/>
+<wire x1="457.2" y1="-99.06" x2="457.2" y2="-101.6" width="0.1524" layer="91"/>
+<label x="457.2" y="-101.6" size="1.4224" layer="95" rot="R270" xref="yes"/>
+</segment>
+</net>
+<net name="N$16" class="0">
+<segment>
+<pinref part="J9" gate="G$1" pin="VBUS"/>
+<pinref part="L2" gate="G$1" pin="1"/>
+<wire x1="30.48" y1="-147.32" x2="40.64" y2="-147.32" width="0.1524" layer="91"/>
+<wire x1="40.64" y1="-147.32" x2="50.8" y2="-147.32" width="0.1524" layer="91"/>
+<wire x1="50.8" y1="-147.32" x2="50.8" y2="-114.3" width="0.1524" layer="91"/>
+<pinref part="C18" gate="G$1" pin="2"/>
+<wire x1="40.64" y1="-142.24" x2="40.64" y2="-147.32" width="0.1524" layer="91"/>
+<junction x="40.64" y="-147.32"/>
 </segment>
 </net>
 </nets>
